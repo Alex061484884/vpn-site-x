@@ -2,22 +2,88 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VPN Shield - Защити своё соединение</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Безопасный VPN</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="globe-container">
-    <img src="https://www.spacex.com/static/images/backgrounds/globe.jpg" alt="Globe" id="globe">
-  </div>
-  <div class="controls">
-    <button class="vpn-toggle-btn" onclick="toggleVPN()">Включить VPN</button>
-    <select class="server-select" id="serverSelect">
-      <option value="server1">Сервер 1</option>
-      <option value="server2">Сервер 2</option>
-      <option value="server3">Сервер 3</option>
-    </select>
-  </div>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">SecureVPN</h1>
+      <nav class="nav">
+        <a href="#features">Преимущества</a>
+        <a href="#pricing">Цены</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Безопасность и свобода в интернете</h2>
+      <p>Защитите свои данные и получите доступ к любому контенту в один клик.</p>
+      <a href="#pricing" class="btn">Начать сейчас</a>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Почему выбирают нас?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Скорость</h3>
+          <p>Молниеносное подключение без лагов и задержек.</p>
+        </div>
+        <div class="card">
+          <h3>Шифрование</h3>
+          <p>Ваши данные под надёжной защитой благодаря современным алгоритмам.</p>
+        </div>
+        <div class="card">
+          <h3>Доступность</h3>
+          <p>Работает на всех устройствах — от телефона до ПК.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Тарифы</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Базовый</h3>
+          <p>Бесплатно</p>
+          <p>Ограниченный трафик и скорость</p>
+          <a href="#" class="btn">Выбрать</a>
+        </div>
+        <div class="card featured">
+          <h3>Премиум</h3>
+          <p>299₽ / мес</p>
+          <p>Безлимитный доступ, высокая скорость</p>
+          <a href="#" class="btn">Выбрать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Связаться с нами</h2>
+      <form>
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Ваше сообщение" required></textarea>
+        <button type="submit" class="btn">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 SecureVPN. Все права защищены.</p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

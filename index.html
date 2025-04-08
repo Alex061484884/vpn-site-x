@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VPN Shield - Защити своё соединение</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f111a;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #1c1f2e;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #2a2d3d;
+      position: relative;
+    }
+    header h1 { margin: 0; font-size: 2em; }
+    .lang-toggle {
+      position: absolute; top: 20px; right: 20px;
+      background: #00c896; color: white;
+      border: none; padding: 8px 12px;
+      border-radius: 5px; cursor: pointer;
+    }
+    .hero, .features, .instructions, .qr-section, .video-section {
+      opacity: 0; transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .visible { opacity: 1; transform: translateY(0); }
+    .hero {
+      text-align: center; padding: 60px 20px;
+      background: linear-gradient(135deg, #1f2233, #2b2e45);
+    }
+    .download-btn {
+      background: #00c896; color: white;
+      padding: 15px 30px; border: none;
+      border-radius: 5px; font-size: 1.1em;
+      cursor: pointer; transition: background 0.3s;
+      margin-bottom: 20px;
+    }
+    .download-btn:hover { background: #00a87c; }
+    .features, .instructions {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; padding: 50px 20px;
+      background: #151720;
+    }
+    .feature, .instruction-step {
+      flex: 1 1 250px; max-width: 300px;
+      margin: 20px; background: #1c1f2e;
+      padding: 20px; border-radius: 10px;
+      text-align: center; border: 1px solid #2a2d3d;
+    }
+    .qr-section {
+      text-align: center; padding: 40px 20px;
+      background: #202234;
+    }
+    .qr-code {
+      width: 200px; height: 200px; margin: auto;
+    }
+    .video-section {
+      padding: 50px 20px; text-align: center;
+      background: #151720;
+    }
+    iframe {
+      width: 100%; max-width: 560px;
+      height: 315px; border: none; border-radius: 10px;
+    }
+    footer {
+      text-align: center; padding: 20px;
+      background: #1c1f2e; border-top: 2px solid #2a2d3d;
+    }
+    a { color: #00c896; text-decoration: none; }
+    @media (max-width: 600px) {
+      .feature, .instruction-step { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">VPN Shield</h1>
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+  </header>
+  <section class="hero scroll-show">
+    <h2 id="subtitle">Безопасность. Анонимность. Свобода.</h2>
+    <p id="description">Надёжный VPN-сервис для Android</p>
+    <button class="download-btn" onclick="downloadApp()" id="downloadBtn">Скачать APK</button><br>
+    <a href="#instructions" id="howToInstall">Как установить?</a>
+  </section>
+  <section class="features scroll-show">
+    <div class="feature">
+      <h3 id="f1Title">Полная конфиденциальность</h3>
+      <p id="f1Text">Ваш IP-адрес остаётся скрытым от всех.</p>
+    </div>
+    <div class="feature">
+      <h3 id="f2Title">Быстрые сервера</h3>
+      <p id="f2Text">Никаких лагов — только скорость.</p>
+    </div>
+    <div class="feature">
+      <h3 id="f3Title">Без рекламы</h3>
+      <p id="f3Text">Приложение без раздражающих баннеров.</p>
+    </div>
+  </section>
+  <section id="instructions" class="instructions scroll-show">
+    <div class="instruction-step">
+      <h3 id="s1Title">Шаг 1</h3>
+      <p id="s1Text">Скачайте файл <strong>VPN Shield.apk</strong> по кнопке выше или через QR-код ниже.</p>
+    </div>
+    <div class="instruction-step">
+      <h3 id="s2Title">Шаг 2</h3>
+      <p id="s2Text">Разрешите установку из неизвестных источников в настройках Android.</p>
+    </div>
+    <div class="instruction-step">
+      <h3 id="s3Title">Шаг 3</h3>
+      <p id="s3Text">Откройте APK-файл и следуйте инструкциям на экране.</p>
+    </div>
+  </section>
+  <section class="qr-section scroll-show">
+    <h3 id="qrTitle">Сканируй и скачай</h3>
+    <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/vpn-shield.apk&size=200x200" alt="QR для загрузки APK">
+    <p><small id="qrNote">QR ведёт на страницу загрузки VPN</small></p>
+  </section>
+  <section class="video-section scroll-show">
+    <h3 id="videoTitle">Видеоурок по установке</h3>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  </section>
+  <footer>
+    <p>&copy; 2025 VPN Shield | <a href="#instructions" id="footerLink">Инструкция</a></p>
+  </footer>
+  <script>
+    function downloadApp() {
+      window.location.href = "https://example.com/vpn-shield.apk";
+    }
+    const ru = {
+      subtitle: "Безопасность. Анонимность. Свобода.",
+      description: "Надёжный VPN-сервис для Android",
+      downloadBtn: "Скачать APK",
+      howToInstall: "Как установить?",
+      f1Title: "Полная конфиденциальность",
+      f1Text: "Ваш IP-адрес остаётся скрытым от всех.",
+      f2Title: "Быстрые сервера",
+      f2Text: "Никаких лагов — только скорость.",
+      f3Title: "Без рекламы",
+      f3Text: "Приложение без раздражающих баннеров.",
+      s1Title: "Шаг 1",
+      s1Text: "Скачайте файл <strong>VPN Shield.apk</strong> по кнопке выше или через QR-код ниже.",
+      s2Title: "Шаг 2",
+      s2Text: "Разрешите установку из неизвестных источников в настройках Android.",
+      s3Title: "Шаг 3",
+      s3Text: "Откройте APK-файл и следуйте инструкциям на экране.",
+      qrTitle: "Сканируй и скачай",
+      qrNote: "QR ведёт на страницу загрузки VPN",
+      videoTitle: "Видеоурок по установке",
+      footerLink: "Инструкция",
+    };
+    const en = {
+      subtitle: "Security. Anonymity. Freedom.",
+      description: "Reliable VPN service for Android",
+      downloadBtn: "Download APK",
+      howToInstall: "How to install?",
+      f1Title: "Full Privacy",
+      f1Text: "Your IP address stays hidden.",
+      f2Title: "Fast Servers",
+      f2Text: "No lags – only speed.",
+      f3Title: "No Ads",
+      f3Text: "No annoying banners inside.",
+      s1Title: "Step 1",
+      s1Text: "Download <strong>VPN Shield.apk</strong> using the button or QR code below.",
+      s2Title: "Step 2",
+      s2Text: "Allow unknown sources in Android settings.",
+      s3Title: "Step 3",
+      s3Text: "Open the APK file and follow the instructions.",
+      qrTitle: "Scan & Download",
+      qrNote: "QR leads to the VPN download page",
+      videoTitle: "Installation Video Guide",
+      footerLink: "Instructions",
+    };
+    let currentLang = 'ru';
+    function toggleLang() {
+      const dict = currentLang === 'ru' ? en : ru;
+      for (const key in dict) {
+        const el = document.getElementById(key);
+        if (el) el.innerHTML = dict[key];
+      }
+      currentLang = currentLang === 'ru' ? 'en' : 'ru';
+      document.querySelector('.lang-toggle').textContent = currentLang.toUpperCase();
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.scroll-show').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

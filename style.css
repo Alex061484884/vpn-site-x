@@ -1,8 +1,9 @@
 
- body {
+  body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0f111a;
+  background: url('https://www.spacex.com/static/images/backgrounds/starfield.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -30,7 +31,9 @@
 }
 
 .vpn-toggle-btn {
-  background: #00c896;
+  background: linear-gradient(45deg, #00c896, #1c1f2e, #00c896);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
   color: white;
   padding: 20px;
   border: none;
@@ -40,6 +43,18 @@
   outline: none;
   transition: background 0.3s;
   margin-top: 20px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .vpn-toggle-btn.on {

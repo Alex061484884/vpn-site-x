@@ -4,77 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VPN Shield - Защити своё соединение</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f111a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-    .vpn-toggle-btn {
-      background: #00c896;
-      color: white;
-      padding: 20px;
-      border: none;
-      border-radius: 50%;
-      font-size: 1.5em;
-      cursor: pointer;
-      outline: none;
-      transition: background 0.3s;
-      margin-top: 20px;
-    }
-    .vpn-toggle-btn.on { background: #ff4b5c; }
-    .server-select {
-      margin-top: 10px;
-      background: #1c1f2e;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 1em;
-      outline: none;
-    }
-    #globe {
-      width: 50%;
-      height: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="https://www.spacex.com/static/images/backgrounds/globe.jpg" alt="Globe" id="globe">
-  <button class="vpn-toggle-btn" onclick="toggleVPN()">Включить VPN</button>
-  <select class="server-select" id="serverSelect">
-    <option value="server1">Сервер 1</option>
-    <option value="server2">Сервер 2</option>
-    <option value="server3">Сервер 3</option>
-  </select>
-
-  <script>
-    let vpnEnabled = false;
-
-    function toggleVPN() {
-      vpnEnabled = !vpnEnabled;
-      const btn = document.querySelector('.vpn-toggle-btn');
-      const server = document.getElementById('serverSelect').value;
-      if (vpnEnabled) {
-        btn.textContent = 'Выключить VPN';
-        btn.classList.add('on');
-        // Добавьте здесь код для включения VPN
-        console.log('VPN включен на сервере', server);
-      } else {
-        btn.textContent = 'Включить VPN';
-        btn.classList.remove('on');
-        // Добавьте здесь код для выключения VPN
-        console.log('VPN выключен');
-      }
-    }
-  </script>
+  <div class="globe-container">
+    <img src="https://www.spacex.com/static/images/backgrounds/globe.jpg" alt="Globe" id="globe">
+  </div>
+  <div class="controls">
+    <button class="vpn-toggle-btn" onclick="toggleVPN()">Включить VPN</button>
+    <select class="server-select" id="serverSelect">
+      <option value="server1">Сервер 1</option>
+      <option value="server2">Сервер 2</option>
+      <option value="server3">Сервер 3</option>
+    </select>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
-   

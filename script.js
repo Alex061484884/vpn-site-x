@@ -63,4 +63,3 @@ async function disableVPN() {
   //   throw new Error('Ошибка при выключении VPN');
   // }
 }
-
